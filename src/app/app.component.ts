@@ -14,7 +14,10 @@ export class Student {
   <h1>{{title}}</h1>
   <h2>{{student.name}} Details!</h2>
   <div><label>Id: </label>{{student.id}}</div>
-  <div><label>Name: </label>{{student.name}}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="student.name" placeholder = "name">
+  </div>
   <div><label>Grade: </label>{{student.grade}}</div>
   `,
 })
