@@ -24,10 +24,9 @@ const STUDENTS: Student[] = [
 })
 export class AppComponent {
   title = 'Directory of Students';
-  student: Student = {
-    id: 1,
-    name: 'Steve Jobs',
-    grade: 5,
-  };
   students = STUDENTS;
+  selectedStudent: Student;
+  onSelect(student: Student): void {
+    this.selectedStudent = student;
+  }
 }
