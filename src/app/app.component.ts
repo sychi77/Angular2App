@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
+import { Student } from './student';
 
-export class Student {
-  id: number;
-  name: string;
-  grade: number;
-}
 const STUDENTS: Student[] = [
   { id: 11, name: 'Moe Nice', grade: 5 },
   { id: 12, name: 'Nars Co', grade: 5 },

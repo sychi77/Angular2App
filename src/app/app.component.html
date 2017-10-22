@@ -9,17 +9,5 @@
     <span class="badge">{{student.id}}</span> {{student.name}} {{student.grade}}
   </li>
 </ul>
-<div *ngIf="selectedStudent">
-  <h2>{{selectedStudent.name}} Details!</h2>
-  <div>
-    <label>Id: </label>{{selectedStudent.id}}
-  </div>
-  <div>
-    <label>Name: </label>
-    <input [(ngModel)]="selectedStudent.name" placeholder = "name">
-  </div>
-  <div>
-    <label>Grade: </label>{{selectedStudent.grade}}
-  </div>
-</div>
+
 
