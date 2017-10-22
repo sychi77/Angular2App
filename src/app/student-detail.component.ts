@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Student } from './student';
+
 @Component({
   selector: 'student-detail',
   template: `
@@ -19,5 +20,5 @@ import { Student } from './student';
   `
 })
 export class StudentDetailComponent {
-    student: Student;
+    @Input() student: Student;
 }
