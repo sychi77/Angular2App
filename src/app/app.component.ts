@@ -1,18 +1,8 @@
 import { Component } from '@angular/core';
-import { Student } from './student';
 
-const STUDENTS: Student[] = [
-  { id: 11, name: 'Moe Nice', grade: 5 },
-  { id: 12, name: 'Nars Co', grade: 5 },
-  { id: 13, name: 'Bomb Asto', grade: 5 },
-  { id: 14, name: 'Cele Ritas', grade: 5 },
-  { id: 15, name: 'Mag Neta', grade: 5 },
-  { id: 16, name: 'Rubber Man', grade: 5 },
-  { id: 17, name: 'Dyn Ama', grade: 5 },
-  { id: 18, name: 'Dre IQ', grade: 5 },
-  { id: 19, name: 'Mag Ma', grade: 5 },
-  { id: 20, name: 'Tor Nado', grade: 5 }
-];
+import { Student } from './student';
+import { StudentService } from './student.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,7 +10,7 @@ const STUDENTS: Student[] = [
 })
 export class AppComponent {
   title = 'Directory of Students';
-  students = STUDENTS;
+  students = Student[];
   selectedStudent: Student;
   onSelect(student: Student): void {
     this.selectedStudent = student;
