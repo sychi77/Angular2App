@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Student } from './student';
 import { StudentService } from './student.service';
@@ -9,12 +9,16 @@ import { StudentService } from './student.service';
   styleUrls: ['./app.component.css'],
   providers: [StudentService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Directory of Students';
   students = Student[];
   selectedStudent: Student;
 
   constructor(private studentService: StudentService) { }  
+
+  ngOnInit(): void {
+    this.getStudents();
+  }
 
   onSelect(student: Student): void {
     this.selectedStudent = student;
@@ -22,4 +26,5 @@ export class AppComponent {
   getStudents(): void {
     this.students = this.studentService.getStudents();
   }
+
 }
