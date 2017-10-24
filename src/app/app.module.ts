@@ -5,9 +5,9 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { StudentDetailComponent } from './student-detail.component';
-import { StudentsComponent }     from './students.component';
+import { StudentsComponent } from './students.component';
 import { DashboardComponent } from './dashboard.component';
-import { StudentService }         from './student.service';
+import { StudentService } from './student.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,10 @@ import { StudentService }         from './student.service';
       {
         path: 'dashboard',
         component: DashboardComponent
+      },
+      {
+        path: 'detail/:id',
+        component: StudentDetailComponent
       }
     ])
   ],
