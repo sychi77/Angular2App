@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; //NgModel directive
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { StudentDetailComponent } from './student-detail.component';
@@ -15,7 +16,13 @@ import { StudentService }         from './student.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule //binds [(ngModel)]
+    FormsModule, //binds [(ngModel)]
+    RouterModule.forRoot([
+      {
+        path: 'students',
+        component: StudentsComponent
+      }
+    ])
   ],
   providers: [
     StudentService
