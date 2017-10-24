@@ -4,12 +4,12 @@ import { Student } from './student';
 import { StudentService } from './student.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-students',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [StudentService]
 })
-export class AppComponent implements OnInit{
+export class StudentsComponent implements OnInit{
   title = 'Directory of Students';
   students : Student[];
   selectedStudent: Student;
