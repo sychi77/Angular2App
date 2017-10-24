@@ -4,17 +4,22 @@ import { FormsModule } from '@angular/forms'; //NgModel directive
 
 import { AppComponent } from './app.component';
 import { StudentDetailComponent } from './student-detail.component';
+import { StudentsComponent }     from './students.component';
+import { StudentService }         from './student.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule //binds [(ngModel)]
   ],
-  providers: [],
+  providers: [
+    StudentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
