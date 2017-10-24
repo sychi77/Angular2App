@@ -6,21 +6,32 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { StudentDetailComponent } from './student-detail.component';
 import { StudentsComponent }     from './students.component';
+import { DashboardComponent } from './dashboard.component';
 import { StudentService }         from './student.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     StudentDetailComponent,
-    StudentsComponent
+    StudentsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule, //binds [(ngModel)]
     RouterModule.forRoot([
       {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
+      {
         path: 'students',
         component: StudentsComponent
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
       }
     ])
   ],
