@@ -11,7 +11,7 @@ import { StudentService } from './student.service';
 })
 export class AppComponent implements OnInit{
   title = 'Directory of Students';
-  students = Student[];
+  students : Student[];
   selectedStudent: Student;
 
   constructor(private studentService: StudentService) { }  
