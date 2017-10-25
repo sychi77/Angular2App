@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Student } from './student';
 import { StudentService } from './student.service';
 
@@ -10,11 +10,12 @@ import { StudentService } from './student.service';
   providers: [StudentService]
 })
 export class StudentsComponent implements OnInit{
-  title = 'Directory of Students';
   students : Student[];
   selectedStudent: Student;
 
-  constructor(private studentService: StudentService) { }  
+  constructor(
+    private router: Router,
+    private studentService: StudentService) { }  
 
   getStudents(): void {
     this.studentService.getStudents().then(students => this.students = students);
@@ -25,5 +26,7 @@ export class StudentsComponent implements OnInit{
   onSelect(student: Student): void {
     this.selectedStudent = student;
   }
-
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedStudent.id]);
+  }
 }
