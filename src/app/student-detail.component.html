@@ -1,0 +1,14 @@
+<div *ngIf="student">
+<h2>{{student.name}} Details!</h2>
+<div>
+  <label>Id: </label>{{student.id}}
+</div>
+<div>
+  <label>Name: </label>
+  <input [(ngModel)]="student.name" placeholder = "name">
+</div>
+<div>
+  <label>Grade: </label>{{student.grade}}
+</div>
+<button (click)="goBack()">Back</button>
+</div>

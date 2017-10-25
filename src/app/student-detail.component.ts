@@ -7,21 +7,7 @@ import { Student } from './student';
 
 @Component({
   selector: 'student-detail',
-  template: `
-  <div *ngIf="student">
-  <h2>{{student.name}} Details!</h2>
-  <div>
-    <label>Id: </label>{{student.id}}
-  </div>
-  <div>
-    <label>Name: </label>
-    <input [(ngModel)]="student.name" placeholder = "name">
-  </div>
-  <div>
-    <label>Grade: </label>{{student.grade}}
-  </div>
-  </div>
-  `
+  templateUrl: './student-detail.component.html' 
 })
 export class StudentDetailComponent implements OnInit{
     @Input() student: Student;
@@ -34,5 +20,8 @@ export class StudentDetailComponent implements OnInit{
       this.route.paramMap
         .switchMap((params: ParamMap) => this.studentService.getStudent(+params.get('id')))
         .subscribe(student => this.student = student);
+    };
+    goBack(): void {
+      this.location.back();
     }
 }
