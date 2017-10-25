@@ -7,7 +7,8 @@ import { Student } from './student';
 
 @Component({
   selector: 'student-detail',
-  templateUrl: './student-detail.component.html' 
+  templateUrl: './student-detail.component.html',
+  styleUrls: ['./student-detail.component.css'] 
 })
 export class StudentDetailComponent implements OnInit{
     @Input() student: Student;
