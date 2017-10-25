@@ -1,8 +1,3 @@
-<div style="text-align:center">
-  <h1>
-    {{title}}!
-  </h1>
-</div>
 <h2>My Students</h2>
 <ul class="students">
   <li *ngFor="let student of students" (click)="onSelect(student)" [class.selected]="student === selectedStudent">
@@ -10,4 +5,9 @@
   </li>
 </ul>
 
-<student-detail [student]="selectedStudent"></student-detail>
+<div *ngIf="selectedStudent">
+  <h2>
+    {{selectedStudent.name | uppercase}} is my student
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
