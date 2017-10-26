@@ -3,20 +3,25 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; //NgModel directive
 import { HttpModule }    from '@angular/http';
 
+import { AppRoutingModule }     from './app-routing.module';
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 import { AppComponent } from './app.component';
 import { StudentDetailComponent } from './student-detail.component';
 import { StudentsComponent } from './students.component';
 import { DashboardComponent } from './dashboard.component';
 import { StudentService } from './student.service';
 
-import { AppRoutingModule }     from './app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   declarations: [
     AppComponent,
@@ -24,9 +29,7 @@ import { AppRoutingModule }     from './app-routing.module';
     StudentDetailComponent,
     StudentsComponent,
   ],
-  providers: [
-    StudentService
-  ],
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
