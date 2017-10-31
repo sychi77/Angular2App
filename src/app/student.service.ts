@@ -23,7 +23,9 @@ export class StudentService {
      return Promise.reject(error.message || error);
    }
     getStudent(id: number): Promise<Student> {
-        return this.getStudents()
-                   .then(students => students.find(student => student.id === id));
-    }
+      const url = `${this.studentsUrl}/${id}`;
+      return this.http.get(url)
+        .toPromise()
+        .then(response => response.json().data as Student)
+        .catch(this.handleError);    }
 }
