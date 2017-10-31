@@ -21,8 +21,12 @@ export class StudentDetailComponent implements OnInit{
       this.route.paramMap
         .switchMap((params: ParamMap) => this.studentService.getStudent(+params.get('id')))
         .subscribe(student => this.student = student);
-    };
+    }
     goBack(): void {
       this.location.back();
+    }
+    save(): void {
+      this.studentService.update(this.student)
+        .then(() => this.goBack());
     }
 }
