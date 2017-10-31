@@ -19,9 +19,9 @@ import { StudentService } from './student.service';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    AppRoutingModule,
   ],
   declarations: [
     AppComponent,
