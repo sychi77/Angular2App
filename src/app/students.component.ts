@@ -29,4 +29,13 @@ export class StudentsComponent implements OnInit{
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedStudent.id]);
   }
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.studentService.create(name)
+      .then(hero => {
+        this.students.push(hero);
+        this.selectedStudent = null;
+      });
+  }
 }
