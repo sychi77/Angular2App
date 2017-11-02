@@ -38,4 +38,12 @@ export class StudentsComponent implements OnInit{
         this.selectedStudent = null;
       });
   }
+  delete(student: Student): void {
+    this.studentService
+        .delete(student.id)
+        .then(() => {
+          this.students = this.students.filter(s => s !== student);
+          if (this.selectedStudent === student) { this.selectedStudent = null; }
+        });
+  }
 }

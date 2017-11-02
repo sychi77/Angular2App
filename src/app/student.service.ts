@@ -46,4 +46,11 @@ export class StudentService {
       .then(res => res.json().data as Student)
       .catch(this.handleError);
   }
+  delete(id: number): Promise<void> {
+    const url = `${this.studentsUrl}/${id}`;
+    return this.http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
 }
