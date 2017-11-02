@@ -11,7 +11,6 @@
   <li *ngFor="let student of students" (click)="onSelect(student)" [class.selected]="student === selectedStudent">
     <span class="badge">{{student.id}}</span> 
     <span>{{student.name}}</span>
-    <span>{{student.grade}}</span> 
     <button class="delete"
     (click)="delete(student); $event.stopPropagation()">x</button>
   </li>
