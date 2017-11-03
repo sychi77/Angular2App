@@ -13,6 +13,7 @@ import { StudentDetailComponent } from './student-detail.component';
 import { StudentsComponent } from './students.component';
 import { DashboardComponent } from './dashboard.component';
 import { StudentService } from './student.service';
+import { StudentSearchComponent } from './student-search.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { StudentService } from './student.service';
     DashboardComponent,
     StudentDetailComponent,
     StudentsComponent,
+    StudentSearchComponent
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]
